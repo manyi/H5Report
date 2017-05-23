@@ -31,25 +31,39 @@
 								 	width:400,
 								 	height:200,
 								 	css:{ 
-								 	top:200,
-								 	backgroundColor:'red'},
-								 	center:true})
+									 	top:200,
+									 	backgroundColor:'red',
+									 	opacity:1
+								 	},
+								 	center:true,
+								 	animateIn:{opacity:1},
+								 	animateOut:{opacity:0}
+								 })
 					.addComponent('sloogn',
 								 {
 								 	text:'sloogn',
 								 	width:200,
 								 	height:200,
 								 	css:{ 
-								 	top:350,
-								 	backgroundColor:'green'}
-								 ,center:true})
+									 	top:350,
+									 	opacity:1,
+									 	backgroundColor:'green'
+								 	},
+								 	center:true,
+								 	animateIn:{opacity:1},
+								 	animateOut:{opacity:0}
+								 })
 				  .addPage('face2').addComponent('page2',{
 				  					text:'page2Text',
 				  					width:200,
 				  					height:200,
 				  					css:{ 
+				  						opacity:1,
 				  						backgroundColor:'yellow'
-				  					}
+				  					},
+				  					center:true,
+				  					animateIn:{opacity:1},
+				  					animateOut:{opacity:0}
 				  				})
 				  .loader(); 
 		})

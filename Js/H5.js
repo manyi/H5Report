@@ -1,3 +1,7 @@
+ /**
+  * [H5 description]
+  * 添加组件和页面
+  */
 var H5=function(){
 	this.id=('H5_'+Math.random()).replace('.','_')
 
@@ -40,7 +44,19 @@ var H5=function(){
 	}
 	/*H5对象初始化显示*/
 	this.loader=function(){
-		this.Elem.fullpage();
+		this.Elem.fullpage({
+			onLeave:function(){//离开事件 
+				$(this).find('.h5_component').trigger('onLeave')
+			},
+			afterLoad:function(){//载入事件 
+				$(this).find('.h5_component').trigger('onLoad')
+			},
+			afterRender:function(){//页面加载完成后执行方法
+				console.log('hello,world')
+			}
+
+		});
+		
 		this.Elem.show()
 	}
 	/*隐藏*/

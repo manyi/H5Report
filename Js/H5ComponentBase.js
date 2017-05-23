@@ -28,21 +28,16 @@ var H5ComponentBase =function ( name, cfg ) {
         component.on('click',cfg.onclick);
     }
     //组件载入事件
-    component.on('onLoad',function(){
-       
-        setTimeout(function(){
-            component.addClass(cls+'_load').removeClass(cls+'_leave');
-            cfg.animateIn && component.animate( cfg.animateIn );
-        },cfg.delay || 0)
-
+    component.on('onLoad',function(){ 
+        console.log('load')
+        component.addClass(cls+'_load').removeClass(cls+'_leave');
+        cfg.animateIn && component.animate(cfg.animateIn );
         return false;
     })
     //组件移出事件
     component.on('onLeave',function(){
-        setTimeout(function(){
-            component.addClass(cls+'_leave').removeClass(cls+'_load');
-            cfg.animateOut && component.animate( cfg.animateOut );
-         },cfg.delay || 0)
+        component.addClass(cls+'_leave').removeClass(cls+'_load');
+        cfg.animateOut && component.animate( cfg.animateOut );
         return false;
     }) 
     return component;
