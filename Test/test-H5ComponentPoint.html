@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title></title>
+
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-size: 12px;
+        }
+
+        .iphone{
+            width: 340px;
+            height: 540px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -270px 0 0 -170px;
+        }
+    </style>
+
+   <meta charset="UTF-8">
+    <title>H5</title>
+    <link rel="stylesheet" type="text/css" href="../css/h5.css">
+    <link rel="stylesheet" type="text/css" href="../css/h5Componentbase.css">
+    <link rel="stylesheet" type="text/css" href="../css/h5ComponentPoint.css">
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.fullpage.js"></script> 
+    <script type="text/javascript" src="../js/h5Componentbase.js"></script> 
+    <script type="text/javascript" src="../js/h5.js"></script> 
+    <script type="text/javascript" src="../js/h5ComponentPoint.js"></script>
+
+    <body>
+        <!-- 用于开发测试 H5ComponentBase 对象（基本的图文组件） -->
+        <div class="iphone">
+
+        </div>
+
+        <script type="text/javascript">
+
+            var cfg = {
+                type : 'point', 
+                data:[
+                    ['A',.6,'red'],
+                    ['B',.4,'yellow',0,'-70%'],
+                    ['C',.2,'green',0,'120%']
+                ],
+                width : 300,
+                height : 300, 
+                css : { 
+                    opacity:0,
+                    bottom:0
+                },
+                animateIn:{ bottom:'30%',opacity:1},
+                animateOut:{ bottom:0,opacity:0 },
+                center : true,
+            }
+
+          
+            var h5point=new H5ComponentPoint('point',cfg)
+            
+            $('.iphone').append(h5point)
+           
+            var leave = true;
+
+            $('body').click(function (){
+                leave = !leave;
+                $('.h5_component').trigger( leave ? 'onLeave' : 'onLoad' )
+            });
+
+        </script>
+
+    </body>
+
+</html>

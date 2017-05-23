@@ -28,8 +28,7 @@ var H5ComponentBase =function ( name, cfg ) {
         component.on('click',cfg.onclick);
     }
     //组件载入事件
-    component.on('onLoad',function(){ 
-        console.log('load')
+    component.on('onLoad',function(){  
         component.addClass(cls+'_load').removeClass(cls+'_leave');
         cfg.animateIn && component.animate(cfg.animateIn );
         return false;
