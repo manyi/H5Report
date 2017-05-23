@@ -4,9 +4,18 @@
 	<meta charset="UTF-8">
 	<title>H5</title>
 	<link rel="stylesheet" type="text/css" href="../css/h5.css">
+	<link rel="stylesheet" type="text/css" href="../css/h5Componentbase.css">
 	<script type="text/javascript" src="../js/lib/jquery.js"></script>
-	<script type="text/javascript" src="../js/h5.js"></script>
-
+	<script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../js/lib/jquery.fullpage.js"></script> 
+	<script type="text/javascript" src="../js/h5Componentbase.js"></script> 
+	<script type="text/javascript" src="../js/h5.js"></script> 
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
 </head>
 <body>
 	<div id="h5">
@@ -14,10 +23,35 @@
 	</div>
 	<script type="text/javascript">
 		$(function(){
-			var h5=new H5();
-
-				h5.addPage('face','this is new page').loader();
-
+			var h5=new H5(); 
+				h5.addPage('首页')
+					.addComponent('logo',
+								 {
+								 	text:'logo', 
+								 	width:400,
+								 	height:200,
+								 	css:{ 
+								 	top:200,
+								 	backgroundColor:'red'},
+								 	center:true})
+					.addComponent('sloogn',
+								 {
+								 	text:'sloogn',
+								 	width:200,
+								 	height:200,
+								 	css:{ 
+								 	top:350,
+								 	backgroundColor:'green'}
+								 ,center:true})
+				  .addPage('face2').addComponent('page2',{
+				  					text:'page2Text',
+				  					width:200,
+				  					height:200,
+				  					css:{ 
+				  						backgroundColor:'yellow'
+				  					}
+				  				})
+				  .loader(); 
 		})
 	</script>
 </body>
