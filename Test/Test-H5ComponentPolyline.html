@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
     <title>H5</title>  
     <link rel="stylesheet" type="text/css" href="../css/h5Componentbase.css">
-    <link rel="stylesheet" type="text/css" href="../css/h5ComponentBar.css">
+    <link rel="stylesheet" type="text/css" href="../css/h5ComponentPolyLine.css">
     <script type="text/javascript" src="../js/lib/jquery.js"></script>
     <script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../js/lib/jquery.fullpage.js"></script>  
     <script type="text/javascript" src="../js/H5Componentbase.js"></script> 
-    <script type="text/javascript" src="../js/H5ComponentBar.js"></script>  
+    <script type="text/javascript" src="../js/H5ComponentPolyLine.js"></script>  
 
  <style type="text/css">
         body{
@@ -40,9 +40,9 @@
         <script type="text/javascript">
 
             var cfg = {
-                type : 'bar', 
+                type : 'PolyLine', 
                 data:[
-                    {title:'JavaScript',per:.6,bg:'red'},
+                    {title:'JS',per:.6,bg:'red'},
                     {title:'HTML5',per:.4},
                     {title:'Css3',per:.1},
                     {title:'NodeJs',per:.2},
@@ -50,23 +50,25 @@
                     {title:'Jquery',per:.4}
                 ],
                 width : 600, 
+                height:400,
                 css : {   
                     top:100,
                     opacity:0
-                },
-                animateIn:{
+                } 
+                ,animateIn:{
                     top:200,
                     opacity:1
                 },
                 animateOut:{
                     top:100,
                     opacity:0
-                },
+                }
+                ,
                 center:true
             }
 
           
-            var h5Bar=new H5ComponentBar('bar',cfg) 
+            var h5Bar=new H5ComponentPolyLine('PolyLine',cfg) 
 
            $('.iphone').append(h5Bar)
            

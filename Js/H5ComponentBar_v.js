@@ -13,7 +13,6 @@ var H5ComponentBar_v=function(name,cfg){
 	$.each(component.find('.rate'),function(indx,Elem){
 		var w = $(this).css('width');
 		$(this).height(w).width('');
-
 	})
 
 	$.each(component.find('.per'),function(){
