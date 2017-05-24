@@ -38,7 +38,7 @@
     <script type="text/javascript" src="../js/h5ComponentPoint.js"></script>
 
     <body>
-        <!-- 用于开发测试 H5ComponentBase 对象（基本的图文组件） -->
+        <!-- 用于开发测试 H5ComponentPoint 对象（散点图组件） -->
         <div class="iphone">
 
         </div>
@@ -47,10 +47,10 @@
 
             var cfg = {
                 type : 'point', 
-                data:[
-                    ['A',.6,'red'],
-                    ['B',.4,'yellow',0,'-70%'],
-                    ['C',.2,'green',0,'120%']
+                data:[//Title，背景色，left，top
+                    {title:'A',per:.6,bg:'red'},
+                    {title:'B',per:.4,bg:'yellow',left:0,top:'-70%'},
+                    {title:'C',per:.2,bg:'green',left:0,top:'120%'}
                 ],
                 width : 300,
                 height : 300, 
@@ -58,15 +58,16 @@
                     opacity:0,
                     bottom:0
                 },
+                center:true,
                 animateIn:{ bottom:'30%',opacity:1},
-                animateOut:{ bottom:0,opacity:0 },
-                center : true,
+                animateOut:{ bottom:0,opacity:0}
             }
 
           
             var h5point=new H5ComponentPoint('point',cfg)
-            
-            $('.iphone').append(h5point)
+            var h5=new H5().addPage('首页').addComponent('base',cfg).loader();
+
+            //$('.iphone').append(h5point)
            
             var leave = true;
 

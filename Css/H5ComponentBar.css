@@ -1,0 +1,57 @@
+/**
+ * 柱图组件样式
+ */
+ .h5_component_name_bar{
+ 	font-size: 15px;
+ 	font-family: '微软雅黑';
+	width: 100%; 
+ } 
+ .h5_component_name_bar .line{ 
+ 	line-height: 15px;
+ 	height: 15px;
+	margin-bottom: 15px;
+ }
+ .h5_component_name_bar .name{  
+ 	width: 70px;
+ 	float: left;
+ 	color: #000;
+ 	text-align: right; 
+ }
+ .h5_component_name_bar .rate{ 
+ 	line-height: 15px;
+ 	height: 15px; 
+ 	margin-left: 5px;
+	float: left; 
+	position: relative; 
+ }
+ .h5_component_name_bar .rate .bg{ 
+  
+ 	position: absolute;
+ 	left: 0;
+ 	top: 0; 
+ 	height: 100%;
+ 	width: 0%;
+ 	background-color: #998;  
+ }
+  .h5_component_name_bar .per{ 
+ 	height: 15px;
+	line-height: 15px;
+	float: left;
+	margin-left: 5px;
+	opacity: 0;
+ }
+ .h5_component_bar_load .rate .bg{
+	-webkit-transition: all 1s .3s; 
+	width: 100%; 
+ }
+ .h5_component_bar_leave .rate .bg{
+ 	-webkit-transition: all 1s; 
+	width: 0%;  
+ }
+.h5_component_bar_load .per{
+	-webkit-transition: all 1s 1.3s; 
+	-webkit-opacity: 1;
+ }
+ .h5_component_bar_leave .per{
+	-webkit-opacity: 0; 
+ }

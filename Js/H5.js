@@ -34,10 +34,19 @@ var H5=function(){
 		var page=this.page.slice(-1)[0];
 		switch (cfg.type) {//判断组件类型
 			case 'base':
-				 component=new H5ComponentBase(name,cfg);
-				break;
+				component = new H5ComponentBase(name,cfg)
+				break 
+			case 'point':
+				component = new H5ComponentPoint(name,cfg)
+				break 			
+			case 'bar':
+				component = new H5ComponentBar(name,cfg)
+				break 			
+			case 'bar_v':
+				component = new H5ComponentBar_v(name,cfg)
+				break 			
 			default: 
-				break;
+				break 		
 		} 
 		page.append(component);
 		return this;

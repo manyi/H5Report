@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <title>H5</title> 
+
+   
+  
+    <link rel="stylesheet" type="text/css" href="../css/h5Componentbase.css">
+    <link rel="stylesheet" type="text/css" href="../css/h5ComponentBar.css">
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.fullpage.js"></script>  
+    <script type="text/javascript" src="../js/H5Componentbase.js"></script> 
+    <script type="text/javascript" src="../js/H5ComponentBar.js"></script>  
+
+ <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-size: 12px;
+        }
+
+        .iphone{
+            width: 340px;
+            height: 540px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -270px 0 0 -170px;
+        }
+    </style>
+ 
+    <body>
+        <!-- 用于开发测试 H5ComponentBar 对象（柱图组件） -->
+        <div class="iphone">
+
+        </div>
+
+        <script type="text/javascript">
+
+            var cfg = {
+                type : 'bar', 
+                data:[
+                    {title:'JavaScript',per:.6,bg:'red'},
+                    {title:'HTML5',per:.4},
+                    {title:'Css3',per:.1},
+                    {title:'NodeJs',per:.2},
+                    {title:'Vue',per:.3},
+                    {title:'Jquery',per:.4}
+                ],
+                width : 600, 
+                css : {   
+                    top:100,
+                    opacity:0
+                },
+                animateIn:{
+                    top:200,
+                    opacity:1
+                },
+                animateOut:{
+                    top:100,
+                    opacity:0
+                },
+                center:true
+            }
+
+          
+            var h5Bar=new H5ComponentBar('bar',cfg) 
+
+           $('.iphone').append(h5Bar)
+           
+            var leave = true;
+
+            $('body').click(function (){
+                leave = !leave;
+                $('.h5_component').trigger( leave ? 'onLeave' : 'onLoad' )
+            });
+
+        </script>
+
+    </body>
+
+</html>
