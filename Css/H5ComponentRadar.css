@@ -1,0 +1,25 @@
+
+.h5_component_name_Radar{
+
+}
+
+.h5_component_name_Radar canvas{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.h5_component_name_Radar .text{
+	position: absolute;
+	font-size: 12px;
+	transform: scale(.8);
+	opacity: 0;
+	-webkit-transition: all 1s .3s;
+}
+.h5_component_Radar_load .text{
+	opacity: 1;
+}
+.h5_component_Radar_leave .text{
+	opacity: 0;
+}

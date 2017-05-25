@@ -17,7 +17,8 @@
 	height: 20px;
 	bottom: -20px;
 	transform: scale(0.9);
-	-webkit-transition: all 1.5s;
+	opacity: 0;
+	-webkit-transition: all 1.5s 1s;
 }
 .h5_component_PolyLine_leave .text{
 	-webkit-opacity: 0;

@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
-    <title>H5</title>  
+    <title>H5Radar</title>  
     <link rel="stylesheet" type="text/css" href="../css/h5Componentbase.css">
-    <link rel="stylesheet" type="text/css" href="../css/h5ComponentPolyLine.css">
-    <script type="text/javascript" src="../js/lib/jquery.js"></script>
-    <script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../js/lib/jquery.fullpage.js"></script>  
+    <link rel="stylesheet" type="text/css" href="../css/h5ComponentRadar.css">
+    <script type="text/javascript" src="../js/lib/jquery.js"></script> 
     <script type="text/javascript" src="../js/H5Componentbase.js"></script> 
-    <script type="text/javascript" src="../js/H5ComponentPolyLine.js"></script>  
+    <script type="text/javascript" src="../js/H5ComponentRadar.js"></script>  
 
- <style type="text/css">
+    <style type="text/css">
         body{
             margin: 0;
             padding: 0;
@@ -40,34 +38,34 @@
         <script type="text/javascript">
 
             var cfg = {
-                type : 'PolyLine', 
+                type : 'Radar', 
                 data:[
-                    {title:'JS',per:.6,bg:'red'},
-                    {title:'HTML5',per:.4},
-                    {title:'Css3',per:.1},
-                    {title:'NodeJs',per:.2},
-                    {title:'Vue',per:.3},
-                    {title:'Jquery',per:.4}
+                    {title:'JS',per:.9,bg:'red'},
+                    {title:'HTML5',per:.8},
+                    {title:'Css3',per:.7},
+                    {title:'NodeJs',per:.6},
+                    {title:'Vue',per:.5}
                 ],
-                width : 600, 
+                width : 400, 
                 height:400, 
                 css : {   
-                    top:100,
+                    top:80,
                     opacity:0
                 } 
                 ,animateIn:{
-                    top:200,
+                    top:150,
                     opacity:1
                 },
                 animateOut:{
-                    top:100,
+                    top:80,
                     opacity:0
-                },
+                }
+                ,
                 center:true
             }
 
           
-           var h5Bar=new H5ComponentPolyLine('PolyLine',cfg) 
+           var h5Bar=new H5ComponentRadar('Radar',cfg) 
            $('.iphone').append(h5Bar) 
             var leave = true; 
             $('body').click(function (){
