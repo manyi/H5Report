@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	 <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<title>H5Report</title>
+	<link rel="stylesheet" type="text/css" href="css/h5.css"> 
+	<link rel="stylesheet" type="text/css" href="css/main.css"> 
+    <script type="text/javascript" src="js/lib/jquery.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.fullpage.js"></script>  
+    <script type="text/javascript" src="js/h5.js"></script>
+    <script type="text/javascript" src="js/loading.js"></script>
+    <style type="text/css">
+	 
+    </style>
+  <script type="text/javascript">
+  			var res = [
+  				'Base','Bar','Bar_v','Point','PolyLine','Radar','Pie'
+  			]
+  			var html=[]
+  			for(s in res){
+  				html.push('<script type="text/javascript" src="js/H5Component'+res[s]+'.js"><\/script>');
+  				html.push('<link rel="stylesheet" type="text/css" href="css/H5Component'+res[s]+'.css">')
+  			}
+  			document.write(html.join(''))
+  </script>
+  <script type="text/javascript">
+  	$(function(){
+  		 var h5 = new H5();
+  		 		h5.whenAddPage=function(){
+  		 			h5.addComponent('footer',{ 
+  		 				css:{
+  		 					opacity:0,
+  		 					width:'100%', 
+  		 					height:39,
+  		 					left:0,
+  		 					bottom:-20,
+  		 					zIndex:999
+  		 				},
+  		 				bg:'images/footer.png',
+  		 				animateIn:{opacity:1,bottom:-1},
+  		 				animateOut:{opacity:0,bottom:-40},
+  		 				delay:1000
+  		 			})
+  		 		}
+  		 		h5.addPage('face')  
+  		 		.addComponent('logo',{
+  		 			center:true,
+  		 			width:395,
+  		 			height:130,
+  		 			bg:'images/face_logo.png',
+  		 			css:{opacity:0},
+  		 			animateIn:{top:100,opacity:1},
+  		 			animateOut:{top:0,opacity:0}
+  		 		}).addComponent('slogan',{
+  		 			center:true, 
+  		 			width:365,
+  		 			height:99,
+  		 			bg:'images/face_slogan.png',
+  		 			css:{opacity:0,top:162},
+  		 			animateIn:{left:'50%',opacity:1},
+  		 			animateOut:{left:'0%',opacity:0},
+  		 			delay:500
+  		 		}).addComponent('face_img_left',{
+  		 			width:370,
+  		 			height:493,
+  		 			bg:'images/face_img_left.png',
+  		 			css:{opacity:0,left:-50,bottom:-50},
+  		 			animateIn:{opacity:1,left:0,bottom:0},
+  		 			animateOut:{opacity:0,left:-50,bottom:-50},
+  		 			delay:1000
+  		 		}).addComponent('face_img_right',{
+  		 			width:276,
+  		 			height:449,
+  		 			bg:'images/face_img_right.png',
+  		 			css:{opacity:0,right:-50,bottom:-50},
+  		 			animateIn:{opacity:1,right:0,bottom:0},
+  		 			animateOut:{opacity:0,right:-50,bottom:-50},
+  		 			delay:1000
+  		 		})
+  		 		.addPage('')//Desc页面
+  		 		.addComponent('capition',{text:'核心理念'})
+  		 		.addComponent('text',{
+  		 			width:500,
+  		 			height:30,
+  		 			center:true,
+  		 			css:{
+  		 				opacity:0,
+  		 				textAlign:'center',
+  		 				color:'red',
+  		 				fontSize:'25px' ,
+  		 				fontWeight:'bold',
+  		 				top:100  
+  		 			},
+  		 			text:'IT教育网=只学有用的',
+  		 			animateIn:{opacity:1,top:140},
+  		 			animateOut:{opacity:0,top:100},
+  		 			delay:500
+  		 		})
+  		 		.addComponent('description',{
+  		 			width:521,
+  		 			height:335,
+  		 			center:true,
+  		 			bg:'images/description_bg.gif',
+  		 			css:{
+  		 				opacity:0,
+  		 				top:240,
+  		 				color:'#fff',
+  		 				padding:'8px',
+  		 				lineHeight:'1.4rem'
+
+  		 			},
+  		 			animateIn:{opacity:1,top:200},
+  		 			animateOut:{opacity:0,top:240},
+  		 			text:'2013年，慕课网的诞生引领中国IT职业 从教育进入新时代； 高质量实战课程、全新教学模式、实时 互动学习，以领先优势打造行业品牌； 迄今为止，慕课网已成为中国规模最大、 互动性最高的IT技能学习平台',
+  		 			delay:800
+  		 		})
+  		 		.addComponent('people',{
+  		 			width:515,
+  		 			height:305,
+  		 			center:true,
+  		 			bg:'images/p1_people.png',
+  		 			css:{opacity:0,top:410},
+  		 			animateIn:{opacity:1,top:390},
+  		 			animateOut:{opacity:0,top:410},
+  		 			delay:1200
+  		 		})
+  		 		.addPage('')//折线图
+  		 		.addComponent('capition',{text:'课程方向分布'})
+  		 		.addComponent('msg',{
+  		 			width:600,
+  		 			center:true,
+  		 			text:'课程分布前端开发占到40%',
+  		 			css:{
+  		 				opacity:0,
+  		 				top:90,
+  		 				color:'red',
+  		 				textAlign:'center'
+  		 			}
+  		 			,animateIn:{opacity:1,top:120}
+  		 			,animateOut:{opacity:0,top:90} 
+  		 		})
+  		 		.addComponent('PolyLine',{
+  		 			 type : 'PolyLine', 
+	                data:[
+	                    {title:'JS',per:.6,bg:'red'},
+	                    {title:'HTML5',per:.4},
+	                    {title:'Css3',per:.1},
+	                    {title:'NodeJs',per:.2},
+	                    {title:'Vue',per:.3}
+	                ],
+	                width : 600, 
+	                height:400, 
+	                css : {   
+	                    top:100,
+	                    opacity:0
+	                } 
+	                ,animateIn:{
+	                    top:200,
+	                    opacity:1
+	                },
+	                animateOut:{
+	                    top:100,
+	                    opacity:0
+	                },
+	                center:true
+  		 		})
+  		 		.addPage('')//饼图
+  		 		.addComponent('capition',{text:'移动开发 '})
+  		 		.addComponent('Pie',{
+  		 			type : 'Pie', 
+	                data:[
+	                    {title:'JS',per:.5,bg:'red'},
+	                    {title:'HTML5',per:.2,bg:'green'},
+	                    {title:'Css3',per:.1,bg:'blue'},
+	                    {title:'NodeJs',per:.1,bg:'orange'},
+	                    {title:'Vue',per:.1,bg:'gray'}
+	                ],
+	                width : 400, 
+	                height:400, 
+	                css : {   
+	                    top:80,
+	                    opacity:0
+	                } 
+	                ,animateIn:{
+	                    top:150,
+	                    opacity:1
+	                },
+	                animateOut:{
+	                    top:80,
+	                    opacity:0
+	                }
+	                ,
+	                center:true
+  		 		})
+  		 		.addPage('')//柱状图
+  		 		.addComponent('capition',{text:'前端开发'})
+  		 		.addComponent('bar',{
+  		 			type : 'bar', 
+	                data:[
+	                    {title:'JavaScript',per:.6,bg:'red'},
+	                    {title:'HTML5',per:.4},
+	                    {title:'Css3',per:.1},
+	                    {title:'NodeJs',per:.2},
+	                    {title:'Vue',per:.3},
+	                    {title:'Jquery',per:.4}
+	                ],
+	                width : 600, 
+	                css : {   
+	                    top:100,
+	                    opacity:0
+	                },
+	                animateIn:{
+	                    top:200,
+	                    opacity:1
+	                },
+	                animateOut:{
+	                    top:100,
+	                    opacity:0
+	                },
+	                center:true	
+  		 		})
+  		 		.addPage('')
+  		 		.addComponent('capition',{text:'课程分布'})
+  		 		.addComponent('bar_v',{
+  		 			type : 'bar_v',
+  		 			data:[
+                    {title:'JS',per:.6,bg:'red'},
+                    {title:'H5',per:.4},
+                    {title:'Css3',per:.1},
+                    {title:'Node',per:.2},
+                    {title:'Vue',per:.3},
+                    {title:'JY',per:.4}
+	                ],
+	                width : 530, 
+	                height:400,
+	                css : {   
+	                    top:100,
+	                    opacity:0
+	                }
+	                ,
+	                animateIn:{
+	                    top:200,
+	                    opacity:1
+	                },
+	                animateOut:{
+	                    top:100,
+	                    opacity:0
+	                }
+	                ,
+	                center:true
+  		 		})
+  		 		.addPage('')//雷达图
+  		 		.addComponent('capition',{text:'后端处理'})
+  		 		.addComponent('Radar',{
+  		 			type : 'Radar', 
+	                data:[
+	                    {title:'JS',per:.9,bg:'red'},
+	                    {title:'HTML5',per:.8},
+	                    {title:'Css3',per:.7},
+	                    {title:'NodeJs',per:.6},
+	                    {title:'Vue',per:.5}
+	                ],
+	                width : 400, 
+	                height:400, 
+	                css : {   
+	                    top:80,
+	                    opacity:0
+	                } 
+	                ,animateIn:{
+	                    top:150,
+	                    opacity:1
+	                },
+	                animateOut:{
+	                    top:80,
+	                    opacity:0
+	                }
+	                ,
+	                center:true
+  		 		})
+  		 		.addPage('finally')
+  		 		.addComponent('back',{
+  		 			center:true,
+  		 			width:52,
+  		 			height:50,
+  		 			bg:'images/tail_back.png',
+  		 			onclick:function(){
+  		 				$.fn.fullpage.moveTo(1)
+  		 			}
+  		 		})
+  		 		.addComponent('tail_logo',{
+  		 			center:true,
+  		 			width:395,
+  		 			height:129,
+  		 			bg:'images/tail_logo.png',
+  		 			css:{opacity:0,top:130},
+  		 			animateIn:{opacity:1,top:164},
+  		 			animateOut:{opacity:0,top:130}
+  		 		})
+  		 		.addComponent('tail_slogan_logo',{
+  		 			center:true,
+  		 			width:314,
+  		 			height:46,
+  		 			bg:'images/tail_slogan.png',
+  		 			css:{opacity:0,top:282},
+  		 			animateIn:{opacity:1,top:232},
+  		 			animateOut:{opacity:0,top:282},
+  		 			delay:1500
+  		 		})
+  		 		.addComponent('share',{ 
+  		 			width:128,
+  		 			height:120,
+  		 			bg:'images/tail_share.png',
+  		 			css:{opacity:0,top:50,right:50},
+  		 			animateIn:{opacity:1,top:20,right:20},
+  		 			animateOut:{opacity:0,top:50,right:50},
+  		 			delay:1500
+  		 		})
+  		 		.loader()
+  	})
+  </script>
+</head>
+<body>
+	<div class="loading">
+	
+		<div class="loading_colum1"></div>
+		<div class="loading_colum2"></div>
+			<div class="loading_rate">0%</div>
+	</div>
+</body>
+</html>

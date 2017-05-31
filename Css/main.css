@@ -1,0 +1,99 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-family: '微软雅黑','Microsoft Yahei'
+}
+.H5_page {
+	background: url('../images/page_bg.png');
+}
+/* 首页背景和动画 */
+.h5_page_face{
+	background: url('../images/face_bg.png');
+}
+.h5_component_name_slogan {
+	-webkit-animation: rock 1.5s infinite 2s;
+}
+@-webkit-keyframes rock{
+	0%{transform: rotate(0deg)}
+	5%{transform: rotate(3deg)}
+	10%{transform: rotate(-4deg)}
+	15%{transform: rotate(3deg)}
+	20%{transform: rotate(-2deg)}
+	70%{transform: rotate(1deg)}
+	90%{transform: rotate(-1deg)}
+	100%{transform: rotate(0deg)} 
+	 
+}
+/* caption logo */
+.h5_component_name_capition {
+	background: url('../images/page_caption_bg.png');
+	height: 160px;
+	width: 283px;
+	text-align: center;
+	line-height: 140px;
+	color: #fff;
+}
+/* finally */
+.h5_component_name_back {
+	top: 30px;
+	-webkit-animation: back 1s infinite;
+}
+@-webkit-keyframes back{
+	50%{top:20px;}
+}
+
+body{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+
+}
+.loading{ 
+	width: 60px;
+	height: 60px;
+	position: relative;
+	top: 50%;
+	margin: -30px auto;
+}
+.loading_colum1,.loading_colum2{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color:#0062e0; 
+	position: absolute;
+	opacity:.6;  
+	left: 0;
+	top: 0; 
+}
+.loading_rate{
+	font-size: 9px;
+	text-align: center;
+	line-height: 20px; 
+	position: absolute;
+	top:100%;
+	width: 100%;
+	color: #006210;
+
+}
+.loading_colum1{
+	-webkit-animation: bounce 1s infinite ease-in-out 0s;
+}
+.loading_colum2{
+	-webkit-animation: bounce2 2s infinite ease-in-out 0s;	
+}
+@-webkit-keyframes bounce{
+	0%,100%{
+		transform: scale(0)
+	}
+	50%{
+		transform: scale(1)
+	}
+}
+@-webkit-keyframes bounce2{
+	0%,100%{
+		transform: scale(1)
+	}
+	50%{
+		transform: scale(0)
+	}
+}

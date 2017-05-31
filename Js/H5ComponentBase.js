@@ -18,7 +18,7 @@ var H5ComponentBase =function ( name, cfg ) {
     //判断是否需要居中
     if(cfg.center === true){
         component.css({ 
-            marginLeft : (cfg.width/4 * -1) + 'px',
+            marginLeft : (cfg.width/4 * -1) + 'px',//疑问
             left:'50%'
         })
     }
@@ -28,15 +28,20 @@ var H5ComponentBase =function ( name, cfg ) {
         component.on('click',cfg.onclick);
     }
     //组件载入事件
-    component.on('onLoad',function(){  
-        component.addClass(cls+'_load').removeClass(cls+'_leave');
-        cfg.animateIn && component.animate(cfg.animateIn );
+    component.on('onLoad',function(){   
+        setTimeout(function(){
+            component.addClass(cls+'_load').removeClass(cls+'_leave');
+            cfg.animateIn && component.animate(cfg.animateIn );
+        },cfg.delay||0)
+       
         return false;
     })
     //组件移出事件
     component.on('onLeave',function(){
-        component.addClass(cls+'_leave').removeClass(cls+'_load');
-        cfg.animateOut && component.animate( cfg.animateOut );
+        setTimeout(function(){
+            component.addClass(cls+'_leave').removeClass(cls+'_load');
+            cfg.animateOut && component.animate( cfg.animateOut );
+        },cfg.delay||0) 
         return false;
     }) 
     return component;

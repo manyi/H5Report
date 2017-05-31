@@ -12,16 +12,19 @@ var H5=function(){
 	$('body').append(this.Elem)
 
 	/*添加一个Page页面*/
-	this.addPage=function(name,text){
+	this.addPage=function(name){
 		var page=$('<div class="H5_page section">') 
 
 		if(name!=undefined)
-			page.addClass('h5_page_'+name)
-		if(text!=undefined)
-			page.text(text) 
+			page.addClass('h5_page_'+name) 
+		 
 		this.Elem.append(page)
-
  		this.page.push(page)
+ 		if(typeof this.whenAddPage === 'function'){
+ 			 
+ 			this.whenAddPage()
+ 		}
+ 		
 		return this;
 	}
 	/*添加一个组件*/
@@ -44,7 +47,16 @@ var H5=function(){
 				break 			
 			case 'bar_v':
 				component = new H5ComponentBar_v(name,cfg)
-				break 			
+				break 	
+			case 'PolyLine':
+				component = new H5ComponentPolyLine(name,cfg)
+				break
+			case 'Pie':
+				component = new H5ComponentPie(name,cfg)
+				break
+			case 'Radar':
+				component = new H5ComponentRadar(name,cfg)
+				break  			
 			default: 
 				break 		
 		} 
@@ -52,7 +64,7 @@ var H5=function(){
 		return this;
 	}
 	/*H5对象初始化显示*/
-	this.loader=function(){
+	this.loader=function(firstPage){
 		this.Elem.fullpage({
 			onLeave:function(){//离开事件 
 				$(this).find('.h5_component').trigger('onLeave')
@@ -61,16 +73,20 @@ var H5=function(){
 				$(this).find('.h5_component').trigger('onLoad')
 			},
 			afterRender:function(){//页面加载完成后执行方法
-				console.log('hello,world')
+					//$(this).find('.h5_component').trigger('onLoad')
 			}
 
-		});
-		
+		}); 
+		this.page[0].find('.h5_component').trigger('onLoad')
 		this.Elem.show()
+		if(firstPage){
+			$.fn.fullpage.moveTo(firstPage)
+		}
 	}
 	/*隐藏*/
 	this.hideELem=function(){
 		this.Elem.hide();
 	}
+	//this.loader = typeof H5_loading === 'funciton' ? H5_loading || this.loader 
 	return this;
 }
