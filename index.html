@@ -9,8 +9,9 @@
     <script type="text/javascript" src="js/lib/jquery.js"></script>
     <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.fullpage.js"></script>  
+      <script type="text/javascript" src="js/loading.js"></script>
     <script type="text/javascript" src="js/h5.js"></script>
-    <script type="text/javascript" src="js/loading.js"></script>
+  
     <style type="text/css">
 	 
     </style>
@@ -33,14 +34,14 @@
   		 				css:{
   		 					opacity:0,
   		 					width:'100%', 
-  		 					height:39,
-  		 					left:0,
-  		 					bottom:-20,
+  		 					height:20,
+  		 					left:-20,
+  		 					bottom:0,
   		 					zIndex:999
   		 				},
   		 				bg:'images/footer.png',
-  		 				animateIn:{opacity:1,bottom:-1},
-  		 				animateOut:{opacity:0,bottom:-40},
+  		 				animateIn:{opacity:1,bottom:0,left:0},
+  		 				animateOut:{opacity:0,bottom:0,left:-20},
   		 				delay:1000
   		 			})
   		 		}
@@ -317,13 +318,13 @@
   		 			animateOut:{opacity:0,top:50,right:50},
   		 			delay:1500
   		 		})
-  		 		.loader()
+  		 		.loader(['images/description_bg.gif','images/face_bg.png','images/face_img_left.png','images/face_img_right.png','images/face_logo.png','images/face_slogan.png','images/footer.png','images/p1_people.png','images/page_bg.png','images/page_caption_bg.png','images/tail_back.png','images/tail_logo.png','images/tail_share.png','images/tail_slogan.png'])
+
   	})
   </script>
 </head>
 <body>
-	<div class="loading">
-	
+	<div class="loading"> 
 		<div class="loading_colum1"></div>
 		<div class="loading_colum2"></div>
 			<div class="loading_rate">0%</div>

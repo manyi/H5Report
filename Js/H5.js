@@ -2,7 +2,7 @@
   * [H5 description]
   * 添加组件和页面
   */
-var H5=function(){
+var H5 = function(){
 	this.id=('H5_'+Math.random()).replace('.','_')
 
 	this.Elem=$('<div id="'+this.id+'" class="H5">').hide();
@@ -87,6 +87,8 @@ var H5=function(){
 	this.hideELem=function(){
 		this.Elem.hide();
 	}
-	//this.loader = typeof H5_loading === 'funciton' ? H5_loading || this.loader 
+	if(typeof H5_loading === 'function'){
+		this.loader= H5_loading
+	} 
 	return this;
 }

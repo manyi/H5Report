@@ -97,3 +97,14 @@ body{
 		transform: scale(0)
 	}
 }
+
+/* footer */
+.h5_component_name_footer {
+	-webkit-transition: all .8s;
+}
+.h5_component_name_footer,.h5_component_base_load{
+	opacity: 1;
+}
+.h5_component_name_footer,.h5_component_base_leave{
+	opacity: 0;
+}
