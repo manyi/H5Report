@@ -6,9 +6,11 @@
     <title>H5Pie</title>  
     <link rel="stylesheet" type="text/css" href="../css/h5Componentbase.css">
     <link rel="stylesheet" type="text/css" href="../css/h5ComponentPie.css">
+    <link rel="stylesheet" type="text/css" href="../css/h5ComponentRing.css">
     <script type="text/javascript" src="../js/lib/jquery.js"></script> 
     <script type="text/javascript" src="../js/H5Componentbase.js"></script> 
-    <script type="text/javascript" src="../js/H5ComponentPie.js"></script>  
+    <script type="text/javascript" src="../js/H5ComponentPie.js"></script>
+    <script type="text/javascript" src="../js/H5ComponentRing2.js"></script>  
 
     <style type="text/css">
         body{
@@ -37,32 +39,28 @@
 
         <script type="text/javascript"> 
             var cfg = {
-                type : 'Pie', 
+                type : 'Ring', 
                 data:[
-                    {title:'JS',per:.02,bg:'red'},
-                    {title:'HTML5',per:.01,bg:'green'},
-                    {title:'Css3',per:.01,bg:'blue'},
-                    {title:'NodeJs',per:.01,bg:'orange'},
-                    {title:'Vue',per:.95,bg:'gray'}
+                    {title:'JS',per:.8,bg:'red'}
                 ],
                 width : 400, 
                 height:400, 
                 css : {   
                     top:80,
-                    opacity:0
-                } 
-                ,animateIn:{
-                    top:150,
                     opacity:1
-                },
-                animateOut:{
-                    top:80,
-                    opacity:0
-                }
+                } 
+                // ,animateIn:{
+                //     top:150,
+                //     opacity:1
+                // },
+                // animateOut:{
+                //     top:80,
+                //     opacity:0
+                // }
                 ,
                 center:true
             } 
-           var h5Bar=new H5ComponentPie('Pie',cfg) 
+           var h5Bar=new H5ComponentRing('Ring',cfg) 
            $('.iphone').append(h5Bar) 
             var leave = true; 
             $('body').click(function (){

@@ -1,7 +1,8 @@
 body{
 	padding: 0;
 	margin: 0;
-	font-family: '微软雅黑','Microsoft Yahei'
+	font-family: '微软雅黑','Microsoft Yahei';
+	font-size: 12px;
 }
 .H5_page {
 	background: url('../images/page_bg.png');

@@ -56,6 +56,9 @@ var H5 = function(){
 				break
 			case 'Radar':
 				component = new H5ComponentRadar(name,cfg)
+				break
+			case 'Ring':
+				component = new H5ComponentRing(name,cfg)
 				break  			
 			default: 
 				break 		

@@ -2,13 +2,11 @@
  * 重写loader 实现图片loading
  */
 var H5_loading = function(images,firstPage){
-	var id = this.id
-
-
+	var id = this.id  
 	if(this._images === undefined){
 		this._images = (images || []).length //第一次进入，将images长度赋值给_images或者定义一个数组
 		this._loaded = 0 //默认开始加载资源数量
-
+		this._firstPage = firstPage
 		window[id] = this //把当前对象存储在全局对象window中，用来进行某个图片加载完成后回调
  
 		for(s in images){
@@ -23,10 +21,8 @@ var H5_loading = function(images,firstPage){
 		$('.loading_rate').text('0%');
 		return this
 	}else{
-		this._loaded++ 
-
-		var rate = this._loaded / this._images * 100 >>>0 
-		console.log(rate)
+		this._loaded++  
+		var rate = this._loaded / this._images * 100 >>>0  
 		$('.loading_rate').text(rate+'%');
 		if(this._loaded<this._images){
 			return this
@@ -47,8 +43,9 @@ var H5_loading = function(images,firstPage){
 
 		}); 
 		this.page[0].find('.h5_component').trigger('onLoad')
-		this.Elem.show()
-		if(firstPage){
-			$.fn.fullpage.moveTo(firstPage)
+		this.Elem.show() 
+		if(this._firstPage){
+			$.fn.fullpage.moveTo(this._firstPage)
 		}
+
 }
